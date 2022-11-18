@@ -1,0 +1,4 @@
+1.使用的stu2.txt的文件有修改，主要是因为随便找图和文件里面的文字进行配对的话，
+   无法检验学生名字、学号和图片是否匹配，所以替代成了真实的人名和照片。
+2.可以运行的主类在“src\lottery2\Application.java”中，Person.java和LotteryFrame.java
+   是新建立的类，它们的意义可以从字面上来理解。

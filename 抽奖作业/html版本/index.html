@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>抽奖作业</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    
+</head>
+<body>
+    <aside class="profile-card">
+        <header>
+          <!-- here’s the avatar -->
+          <a target="_blank" href="#">
+            <img id= "changeImg" src="1.jpg" class="hoverZoomLink">
+          </a>
+          <!-- the username -->
+          
+          <h1 id= "changeWord">
+
+            
+                 王嘉尔
+                </h1>
+          <!-- and role or location -->
+          <h2>
+                  
+                </h2>
+        </header>
+      
+        <!-- bit of a bio; who are you? -->
+        <div class="profile-bio">
+          <br>
+          <button class="button" onclick="control()" >Click Here</button>
+        </div>
+      
+        <!-- some social links to show off -->
+        <ul class="profile-social-links">
+          <li>
+            <a target="_blank" href="">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="">
+              <i class="fa fa-github"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="">
+             
+              <i class="fa fa-behance"></i>
+            </a>
+          </li>
+        </ul>
+      </aside>
+</body>
+<script>
+    
+    var flag = 0;
+    var int;
+    function control(){
+       
+        if(flag == 0){
+            int=self.setInterval("change()",150);
+            flag = 1;
+        }else{
+            int=window.clearInterval(int);
+            flag = 0;
+        }
+    }
+    // 首先，定义一个数组，用于存放所有的背景图片
+    var imgArr = new Array();
+    // 将所有背景图放入arr内
+    imgArr.push('1.jpg', '2.jpg', '3.jpg',"4.jpg","5.jpg","6.jpg");
+    var inform=[];
+    var inform=new Array("王嘉尔", "梅艳芳", "刘德华","古天乐","张国荣","郭富城");
+    function change() {
+            var index =parseInt(Math.random()*(imgArr.length-1));  
+            var currentImage=imgArr[index]; 
+            var currentWord=inform[index]; 
+            document.getElementById("changeImg").src=currentImage; 
+            document.getElementById("changeWord").innerText=currentWord; 
+            flag = 1;
+    };
+</script>
+</html>
